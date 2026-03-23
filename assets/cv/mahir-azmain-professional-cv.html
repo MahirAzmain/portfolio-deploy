@@ -3,367 +3,218 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mahir Azmain Haque - CV</title>
+  <title>Mahir Azmain Haque - One Page CV</title>
   <style>
     :root {
       --navy: #16324f;
-      --navy-dark: #0f2236;
       --gold: #c9a227;
-      --text: #1c2430;
-      --muted: #5f6b7a;
-      --line: #d9dee5;
-      --soft: #f6f8fb;
+      --text: #1f2933;
+      --muted: #5b6570;
+      --line: #dde3ea;
+      --soft: #f7f9fc;
       --white: #ffffff;
     }
-
     * { box-sizing: border-box; }
-
     body {
       margin: 0;
-      background: linear-gradient(135deg, #eef2f7, #f8fafc);
+      background: #eef2f7;
       font-family: "Inter", "Segoe UI", Arial, sans-serif;
       color: var(--text);
-      line-height: 1.55;
+      line-height: 1.42;
     }
-
     .page {
       width: 210mm;
       min-height: 297mm;
-      margin: 24px auto;
+      margin: 18px auto;
       background: var(--white);
-      box-shadow: 0 18px 50px rgba(15, 34, 54, 0.12);
-      overflow: hidden;
-      border-radius: 14px;
+      box-shadow: 0 14px 40px rgba(0,0,0,.10);
+      padding: 18mm 16mm;
     }
-
-    .hero-layout {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
+    .header {
+      border-bottom: 3px solid var(--navy);
+      padding-bottom: 10px;
+      margin-bottom: 14px;
     }
-
-    .hero-text {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .hero-photo {
-      width: 118px;
-      height: 118px;
-      border-radius: 18px;
-      object-fit: cover;
-      border: 3px solid rgba(255,255,255,.75);
-      box-shadow: 0 10px 24px rgba(0,0,0,.18);
-      background: rgba(255,255,255,.08);
-    }
-
-    .hero {
-      background: linear-gradient(135deg, var(--navy-dark), var(--navy));
-      color: white;
-      padding: 28px 34px 24px;
-      position: relative;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      right: -40px;
-      top: -40px;
-      width: 180px;
-      height: 180px;
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: 50%;
-    }
-
     h1 {
       margin: 0;
-      font-size: 36px;
-      font-weight: 800;
-      letter-spacing: .3px;
-    }
-
-    .subtitle {
-      margin-top: 8px;
-      color: rgba(255,255,255,.88);
-      font-size: 15px;
-      letter-spacing: .3px;
-    }
-
-    .contact {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px 22px;
-      margin-top: 18px;
-      font-size: 13.5px;
-      color: rgba(255,255,255,.92);
-    }
-
-    .content {
-      padding: 26px 30px 30px;
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 26px;
-    }
-
-    .section {
-      margin-bottom: 20px;
-    }
-
-    .section-title {
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
+      font-size: 30px;
       color: var(--navy);
-      margin-bottom: 10px;
-      padding-bottom: 6px;
-      border-bottom: 3px solid var(--gold);
+      letter-spacing: .2px;
     }
-
-    .summary-box,
-    .card {
-      background: var(--soft);
-      border: 1px solid #e9eef4;
-      border-radius: 12px;
-      padding: 14px 16px;
+    .subtitle {
+      margin-top: 4px;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 600;
     }
-
-    .entry {
-      margin-bottom: 14px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--line);
+    .contact {
+      margin-top: 8px;
+      font-size: 12.5px;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
     }
-
-    .entry:last-child {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: 0;
+    .grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
     }
-
-    .entry-header {
+    .section { margin-bottom: 14px; }
+    .section-title {
+      color: var(--navy);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 800;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+    }
+    p { margin: 4px 0 0; font-size: 12.8px; }
+    .entry { margin-bottom: 10px; }
+    .entry:last-child { margin-bottom: 0; }
+    .entry-head {
       display: flex;
       justify-content: space-between;
-      gap: 14px;
+      gap: 10px;
       align-items: baseline;
       flex-wrap: wrap;
     }
-
     .role {
-      font-size: 17px;
+      font-size: 14px;
       font-weight: 700;
-      color: var(--navy-dark);
+      color: var(--text);
     }
-
     .meta {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--muted);
       font-weight: 600;
     }
-
-    .org {
-      margin-top: 3px;
-      color: var(--muted);
-      font-size: 14px;
+    .org { font-size: 12.5px; color: var(--muted); margin-top: 1px; }
+    ul { margin: 6px 0 0 18px; padding: 0; }
+    li { margin: 3px 0; font-size: 12.8px; }
+    .compact-list li { margin: 2px 0; }
+    .box {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      border-radius: 10px;
     }
-
-    p {
-      margin: 7px 0 0;
-      font-size: 14px;
-    }
-
-    ul {
-      margin: 8px 0 0 18px;
-      padding: 0;
-    }
-
-    li {
-      margin: 5px 0;
-      font-size: 14px;
-    }
-
-    .skill-group {
-      margin-bottom: 12px;
-    }
-
-    .skill-group:last-child { margin-bottom: 0; }
-
-    .label {
-      font-weight: 700;
-      color: var(--navy-dark);
-    }
-
-    .pill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .pill {
-      background: #edf3f9;
-      color: var(--navy);
-      border: 1px solid #d9e6f2;
-      border-radius: 999px;
-      padding: 6px 10px;
-      font-size: 12.5px;
-      font-weight: 600;
-    }
-
-    .two-col-list {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-    }
-
+    .skills p { margin-top: 5px; }
     @media print {
-      body {
-        background: white;
-      }
-      .page {
-        margin: 0;
-        border-radius: 0;
-        box-shadow: none;
-        width: auto;
-        min-height: auto;
-      }
+      body { background: white; }
+      .page { margin: 0; box-shadow: none; width: auto; min-height: auto; }
     }
   </style>
 </head>
 <body>
   <main class="page">
-    <section class="hero">
-      <div class="hero-layout">
-        <div class="hero-text">
-          <h1>Mahir Azmain Haque</h1>
-          <div class="subtitle">Computer Science & Engineering Student • Software Development • Machine Learning</div>
-        </div>
-        <img class="hero-photo" src="../img/WhatsApp Image 2026-03-23 at 11.59.53.jpeg" alt="Mahir Azmain Haque" />
-      </div>
-
+    <section class="header">
+      <h1>Mahir Azmain Haque</h1>
+      <div class="subtitle">Computer Science & Engineering Student | Software Development | Machine Learning</div>
       <div class="contact">
-        <div><strong>Location:</strong> Azimpur, Dhaka, Bangladesh</div>
-        <div><strong>Phone:</strong> +880 1534 66 40 68</div>
-        <div><strong>Email:</strong> mahirazmain7@gmail.com</div>
-        <div><strong>GitHub:</strong> github.com/MahirAzmain</div>
-        <div><strong>Portfolio:</strong> github.com/MahirAzmain/portfolio-deploy</div>
+        <span>Azimpur, Dhaka, Bangladesh</span>
+        <span>+880 1534 66 40 68</span>
+        <span>mahirazmain7@gmail.com</span>
+        <span>github.com/MahirAzmain</span>
+        <span>github.com/MahirAzmain/portfolio-deploy</span>
       </div>
     </section>
 
-    <section class="content">
-      <div>
-        <div class="section">
-          <div class="section-title">Professional Summary</div>
-          <div class="summary-box">
-            <p>
-              Motivated Computer Science and Engineering student with interests spanning software development,
-              machine learning, image processing, and intelligent systems. Experienced in building academic and
-              personal projects across web, mobile, and database-driven platforms. Recognized through leadership,
-              teamwork, and achievement-based awards, with a strong focus on creating practical, user-friendly,
-              and impactful technology solutions.
-            </p>
-          </div>
-        </div>
-
-        <div class="section">
-          <div class="section-title">Projects</div>
-          <div class="card">
-            <div class="entry">
-              <div class="role">Hemocam App</div>
-              <p>Android application designed to detect hemoglobin levels through image processing and machine learning, combining healthcare utility with a user-friendly mobile experience.</p>
-            </div>
-            <div class="entry">
-              <div class="role">Online Grocery Shop</div>
-              <p>iOS application built with Swift and API-based information extraction to deliver an efficient and user-friendly grocery shopping experience.</p>
-            </div>
-            <div class="entry">
-              <div class="role">PocketGuard Personal Finance</div>
-              <p>Personal finance application for tracking spending, setting financial goals, and managing budgets, with features such as parental controls, secure login, and transaction history.</p>
-            </div>
-            <div class="entry">
-              <div class="role">Stock Exchange Database System</div>
-              <p>Database-driven academic project built using Oracle SQL Plus 21c.</p>
-            </div>
-            <div class="entry">
-              <div class="role">BookLover</div>
-              <p>Web application developed with Laravel to help readers discover, manage, review, and share books in a unified platform.</p>
-            </div>
-            <div class="entry">
-              <div class="role">Tiny Messenger</div>
-              <p>Object-oriented programming project in C++ featuring sign up, sign in, chat, add friends, inbox management, unfriend functionality, group chat, and friend list management.</p>
-            </div>
-          </div>
-        </div>
+    <section class="section">
+      <div class="section-title">Professional Summary</div>
+      <div class="box">
+        <p>Motivated Computer Science and Engineering student with interests in software development, machine learning, image processing, and intelligent systems. Experienced in building academic and personal projects across web, mobile, and database-driven platforms, with a strong focus on practical, user-friendly solutions.</p>
       </div>
+    </section>
 
+    <div class="grid">
       <div>
-        <div class="section">
-          <div class="section-title">Education</div>
-          <div class="card">
-            <div class="entry">
-              <div class="entry-header">
-                <div class="role">BSc in Computer Science & Engineering</div>
-                <div class="meta">2021 – Present</div>
-              </div>
-              <div class="org">Khulna University of Engineering & Technology (KUET)</div>
-              <p><strong>CGPA:</strong> 3.49 / 4.00</p>
-            </div>
-            <div class="entry">
-              <div class="entry-header">
-                <div class="role">Higher Secondary Certificate (Science)</div>
-                <div class="meta">2018</div>
-              </div>
-              <div class="org">Dhaka College, Dhaka Board</div>
-              <p><strong>GPA:</strong> 5.00 / 5.00</p>
-            </div>
+        <section class="section">
+          <div class="section-title">Selected Projects</div>
+          <div class="entry">
+            <div class="role">Hemocam App</div>
+            <p>Android application for hemoglobin level detection using image processing and machine learning.</p>
           </div>
-        </div>
-
-        <div class="section">
-          <div class="section-title">Technical Skills</div>
-          <div class="card two-col-list">
-            <div class="skill-group"><span class="label">Languages:</span> C, C++, Java, Swift, JavaScript, SQL, C#, Python</div>
-            <div class="skill-group"><span class="label">Frameworks:</span> Laravel, Django</div>
-            <div class="skill-group"><span class="label">Databases:</span> MySQL, Firebase, Oracle</div>
-            <div class="skill-group"><span class="label">Development:</span> Java Software Development, iOS App Development, Android App Development, API Integration</div>
-            <div class="skill-group"><span class="label">Tools & Strengths:</span> Git, Teamwork, Leadership, Punctuality</div>
+          <div class="entry">
+            <div class="role">Online Grocery Shop</div>
+            <p>iOS application built with Swift and API-based information extraction for a streamlined shopping experience.</p>
           </div>
-        </div>
-
-        <div class="section">
-          <div class="section-title">Research Interests</div>
-          <div class="pill-list">
-            <span class="pill">Edge AI</span>
-            <span class="pill">Machine Learning</span>
-            <span class="pill">Deep Learning</span>
-            <span class="pill">Biomedical Applications</span>
+          <div class="entry">
+            <div class="role">PocketGuard Personal Finance</div>
+            <p>Finance app for expense tracking, budgeting, financial goals, and secure transaction history management.</p>
           </div>
-        </div>
+          <div class="entry">
+            <div class="role">BookLover</div>
+            <p>Laravel web app for discovering, reviewing, managing, and sharing books.</p>
+          </div>
+          <div class="entry">
+            <div class="role">Tiny Messenger</div>
+            <p>C++ OOP project featuring authentication, chat, friends, inbox, and group chat functionality.</p>
+          </div>
+          <div class="entry">
+            <div class="role">Stock Exchange Database System</div>
+            <p>Academic database system project developed using Oracle SQL Plus 21c.</p>
+          </div>
+        </section>
 
-        <div class="section">
+        <section class="section">
           <div class="section-title">Awards & Achievements</div>
-          <div class="card">
-            <div class="entry">
-              <div class="role">Duke of Edinburgh's International Award</div>
-              <p>Recognized for skill development, physical fitness, community service, and adventurous activities (2024).</p>
-            </div>
-            <div class="entry">
-              <div class="role">Intra KUET Football Tournament</div>
-              <p>Champion; played as Forward and served as Captain (2023).</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="section">
-          <div class="section-title">Languages</div>
-          <div class="card">
-            <p>Bangla — Proficient</p>
-            <p>English — Proficient</p>
-          </div>
-        </div>
+          <ul class="compact-list">
+            <li><strong>Duke of Edinburgh's International Award</strong> — Recognized for skill development, fitness, service, and adventurous activities (2024).</li>
+            <li><strong>Intra KUET Football Tournament Champion</strong> — Played as Forward and served as Captain (2023).</li>
+          </ul>
+        </section>
       </div>
-    </section>
+
+      <div>
+        <section class="section">
+          <div class="section-title">Education</div>
+          <div class="entry">
+            <div class="entry-head">
+              <div class="role">BSc in Computer Science & Engineering</div>
+              <div class="meta">2021 – Present</div>
+            </div>
+            <div class="org">Khulna University of Engineering & Technology (KUET)</div>
+            <p><strong>CGPA:</strong> 3.49 / 4.00</p>
+          </div>
+          <div class="entry">
+            <div class="entry-head">
+              <div class="role">Higher Secondary Certificate (Science)</div>
+              <div class="meta">2018</div>
+            </div>
+            <div class="org">Dhaka College, Dhaka Board</div>
+            <p><strong>GPA:</strong> 5.00 / 5.00</p>
+          </div>
+        </section>
+
+        <section class="section skills">
+          <div class="section-title">Technical Skills</div>
+          <p><strong>Languages:</strong> C, C++, Java, Swift, JavaScript, SQL, C#, Python</p>
+          <p><strong>Frameworks:</strong> Laravel, Django</p>
+          <p><strong>Databases:</strong> MySQL, Firebase, Oracle</p>
+          <p><strong>Development:</strong> Android, iOS, API Integration, Java Software Development</p>
+          <p><strong>Tools:</strong> Git, GitHub</p>
+        </section>
+
+        <section class="section">
+          <div class="section-title">Research Interests</div>
+          <ul class="compact-list">
+            <li>Edge AI</li>
+            <li>Machine Learning</li>
+            <li>Deep Learning</li>
+            <li>Biomedical Applications</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <div class="section-title">Languages</div>
+          <p>Bangla — Proficient</p>
+          <p>English — Proficient</p>
+        </section>
+      </div>
+    </div>
   </main>
 </body>
 </html>
