@@ -55,43 +55,65 @@ alter table public.projects enable row level security;
 alter table public.music enable row level security;
 alter table public.feedback enable row level security;
 
+-- public read policies
 drop policy if exists "public read about" on public.about;
 create policy "public read about" on public.about for select using (true);
-
 drop policy if exists "public read education" on public.education;
 create policy "public read education" on public.education for select using (true);
-
 drop policy if exists "public read experience" on public.experience;
 create policy "public read experience" on public.experience for select using (true);
-
 drop policy if exists "public read projects" on public.projects;
 create policy "public read projects" on public.projects for select using (true);
-
 drop policy if exists "public read music" on public.music;
 create policy "public read music" on public.music for select using (true);
-
 drop policy if exists "public insert feedback" on public.feedback;
 create policy "public insert feedback" on public.feedback for insert with check (true);
 
-delete from public.about;
-insert into public.about (id, image, description, skills, cv_link) values
-(1, 'assets/img/about-perfil.jpg', 'I am Mahir Azmain, a frontend-focused developer who enjoys building clean, responsive websites and practical web experiences.', 'HTML, CSS, JavaScript, PHP, MySQL, Responsive Design', 'assets/cv/CV_2024030410050372.pdf');
+-- authenticated admin policies
+drop policy if exists "auth manage about" on public.about;
+create policy "auth manage about" on public.about for all to authenticated using (true) with check (true);
+drop policy if exists "auth manage education" on public.education;
+create policy "auth manage education" on public.education for all to authenticated using (true) with check (true);
+drop policy if exists "auth manage experience" on public.experience;
+create policy "auth manage experience" on public.experience for all to authenticated using (true) with check (true);
+drop policy if exists "auth manage projects" on public.projects;
+create policy "auth manage projects" on public.projects for all to authenticated using (true) with check (true);
+drop policy if exists "auth manage music" on public.music;
+create policy "auth manage music" on public.music for all to authenticated using (true) with check (true);
+drop policy if exists "auth read feedback" on public.feedback;
+create policy "auth read feedback" on public.feedback for select to authenticated using (true);
+drop policy if exists "auth delete feedback" on public.feedback;
+create policy "auth delete feedback" on public.feedback for delete to authenticated using (true);
 
-truncate public.education restart identity;
-insert into public.education (tittle, institute, data_range, description) values
-('BSc in Computer Science', 'Your University Name', '2021 - Present', 'Frontend-focused student developer building practical web projects and sharpening full-stack skills.');
+insert into public.about (id, image, description, skills, cv_link)
+values (1, 'assets/img/about-perfil.jpg', 'I am Mahir Azmain, a frontend-focused developer who enjoys building clean, responsive websites and practical web experiences.', 'HTML, CSS, JavaScript, PHP, MySQL, Responsive Design', 'assets/cv/CV_2024030410050372.pdf')
+on conflict (id) do update set
+  image = excluded.image,
+  description = excluded.description,
+  skills = excluded.skills,
+  cv_link = excluded.cv_link;
 
-truncate public.experience restart identity;
-insert into public.experience (title, company, data_range, description) values
-('Frontend Developer', 'Freelance / Personal Projects', '2023 - Present', 'Building responsive interfaces, portfolio projects, and web-based experiments.');
+insert into public.education (tittle, institute, data_range, description)
+select 'BSc in Computer Science', 'Your University Name', '2021 - Present', 'Frontend-focused student developer building practical web projects and sharpening full-stack skills.'
+where not exists (select 1 from public.education);
 
-truncate public.projects restart identity;
-insert into public.projects (image, title, description, weblink, demolink) values
-('assets/img/art-store-eta.webp', 'Art Store', 'A storefront-style project showcasing layout, product presentation, and responsive design.', 'https://github.com/MahirAzmain', 'https://github.com/MahirAzmain'),
-('assets/img/world-clock.webp', 'World Clock', 'A simple utility project for tracking time across locations with a clean UI.', 'https://github.com/MahirAzmain', 'https://github.com/MahirAzmain'),
-('assets/img/battery.webp', 'Battery UI Project', 'A front-end visual project focused on interaction and polished design details.', 'https://github.com/MahirAzmain', 'https://github.com/MahirAzmain');
+insert into public.experience (title, company, data_range, description)
+select 'Frontend Developer', 'Freelance / Personal Projects', '2023 - Present', 'Building responsive interfaces, portfolio projects, and web-based experiments.'
+where not exists (select 1 from public.experience);
 
-truncate public.music restart identity;
-insert into public.music (title, link) values
-('Playlist Cá Hồi Hoang', 'https://open.spotify.com/embed/playlist/2P9xnhDe4FFQxlLEUYDxqt?utm_source=generator'),
-('Playlist Đen Vâu', 'https://open.spotify.com/embed/playlist/0CKWdKfhWPtqhpiwCwg1zw?utm_source=generator');
+insert into public.projects (image, title, description, weblink, demolink)
+select * from (
+  values
+  ('assets/img/art-store-eta.webp', 'Art Store', 'A storefront-style project showcasing layout, product presentation, and responsive design.', 'https://github.com/MahirAzmain', 'https://github.com/MahirAzmain'),
+  ('assets/img/world-clock.webp', 'World Clock', 'A simple utility project for tracking time across locations with a clean UI.', 'https://github.com/MahirAzmain', 'https://github.com/MahirAzmain'),
+  ('assets/img/battery.webp', 'Battery UI Project', 'A front-end visual project focused on interaction and polished design details.', 'https://github.com/MahirAzmain', 'https://github.com/MahirAzmain')
+) as seed(image, title, description, weblink, demolink)
+where not exists (select 1 from public.projects);
+
+insert into public.music (title, link)
+select * from (
+  values
+  ('Playlist Cá Hồi Hoang', 'https://open.spotify.com/embed/playlist/2P9xnhDe4FFQxlLEUYDxqt?utm_source=generator'),
+  ('Playlist Đen Vâu', 'https://open.spotify.com/embed/playlist/0CKWdKfhWPtqhpiwCwg1zw?utm_source=generator')
+) as seed(title, link)
+where not exists (select 1 from public.music);

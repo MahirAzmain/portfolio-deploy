@@ -23,4 +23,5 @@ Push to `main` and GitHub Pages serves the site automatically.
 ## Notes
 - anonymous read access is enabled for public portfolio content
 - anonymous insert is enabled for `feedback`
-- update/delete/admin auth is not implemented yet
+- `admin.html` provides Supabase email/password admin login plus CRUD for about, education, experience, projects, and music
+- authenticated admins can also read feedback entries

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Admin</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+      body { padding: 2rem 1rem 4rem; max-width: 1000px; margin: 0 auto; }
+      .admin-card { border: 1px solid #ccc; border-radius: 12px; padding: 1rem; margin-bottom: 1rem; }
+      .admin-grid { display: grid; gap: 1rem; }
+      .admin-grid.two { grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); }
+      input, textarea, button, select { width: 100%; padding: .75rem; margin-top: .5rem; }
+      textarea { min-height: 110px; }
+      .row { display: grid; gap: .75rem; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); }
+      .muted { opacity: .75; font-size: .95rem; }
+      .list { display: grid; gap: .75rem; }
+      .item { border: 1px solid #ddd; border-radius: 10px; padding: .75rem; }
+      .actions { display:flex; gap:.5rem; flex-wrap:wrap; }
+      .actions button { width:auto; }
+      #admin-app { display:none; }
+    </style>
+  </head>
+  <body>
+    <h1>Portfolio Admin</h1>
+    <p class="muted">Sign in with a Supabase user you create in Authentication. Then manage portfolio content live.</p>
+
+    <section id="auth-box" class="admin-card">
+      <h2>Admin Login</h2>
+      <div class="row">
+        <div>
+          <label>Email</label>
+          <input id="email" type="email" placeholder="admin@example.com" />
+        </div>
+        <div>
+          <label>Password</label>
+          <input id="password" type="password" placeholder="Password" />
+        </div>
+      </div>
+      <div class="actions" style="margin-top:1rem;">
+        <button id="sign-in">Sign In</button>
+        <button id="sign-up">Create Admin User</button>
+        <button id="sign-out" style="display:none;">Sign Out</button>
+      </div>
+      <p id="auth-status" class="muted"></p>
+    </section>
+
+    <div id="admin-app">
+      <section class="admin-card">
+        <h2>About</h2>
+        <div class="admin-grid">
+          <input id="about-image" placeholder="Image URL or asset path" />
+          <textarea id="about-description" placeholder="Description"></textarea>
+          <textarea id="about-skills" placeholder="Skills"></textarea>
+          <input id="about-cv" placeholder="CV URL or asset path" />
+          <button id="save-about">Save About</button>
+        </div>
+      </section>
+
+      <section class="admin-card">
+        <h2>Education</h2>
+        <div class="row">
+          <input id="education-title" placeholder="Title" />
+          <input id="education-institute" placeholder="Institute" />
+          <input id="education-range" placeholder="Date range" />
+        </div>
+        <textarea id="education-description" placeholder="Description"></textarea>
+        <div class="actions">
+          <button id="add-education">Add Education</button>
+        </div>
+        <div id="education-admin-list" class="list"></div>
+      </section>
+
+      <section class="admin-card">
+        <h2>Experience</h2>
+        <div class="row">
+          <input id="experience-title" placeholder="Title" />
+          <input id="experience-company" placeholder="Company" />
+          <input id="experience-range" placeholder="Date range" />
+        </div>
+        <textarea id="experience-description" placeholder="Description"></textarea>
+        <div class="actions">
+          <button id="add-experience">Add Experience</button>
+        </div>
+        <div id="experience-admin-list" class="list"></div>
+      </section>
+
+      <section class="admin-card">
+        <h2>Projects</h2>
+        <div class="row">
+          <input id="project-title" placeholder="Title" />
+          <input id="project-image" placeholder="Image URL or asset path" />
+          <input id="project-weblink" placeholder="Web link" />
+          <input id="project-demolink" placeholder="Demo link" />
+        </div>
+        <textarea id="project-description" placeholder="Description"></textarea>
+        <div class="actions">
+          <button id="add-project">Add Project</button>
+        </div>
+        <div id="projects-admin-list" class="list"></div>
+      </section>
+
+      <section class="admin-card">
+        <h2>Music</h2>
+        <div class="row">
+          <input id="music-title" placeholder="Playlist title" />
+          <input id="music-link" placeholder="Spotify embed link" />
+        </div>
+        <div class="actions">
+          <button id="add-music">Add Playlist</button>
+        </div>
+        <div id="music-admin-list" class="list"></div>
+      </section>
+
+      <section class="admin-card">
+        <h2>Feedback Inbox</h2>
+        <div id="feedback-list" class="list"></div>
+      </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="assets/js/admin.js"></script>
+  </body>
+</html>
