@@ -36,6 +36,28 @@
       border-radius: 14px;
     }
 
+    .hero-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .hero-photo {
+      width: 118px;
+      height: 118px;
+      border-radius: 18px;
+      object-fit: cover;
+      border: 3px solid rgba(255,255,255,.75);
+      box-shadow: 0 10px 24px rgba(0,0,0,.18);
+      background: rgba(255,255,255,.08);
+    }
+
     .hero {
       background: linear-gradient(135deg, var(--navy-dark), var(--navy));
       color: white;
@@ -212,8 +234,13 @@
 <body>
   <main class="page">
     <section class="hero">
-      <h1>Mahir Azmain Haque</h1>
-      <div class="subtitle">Computer Science & Engineering Student • Software Development • Machine Learning</div>
+      <div class="hero-layout">
+        <div class="hero-text">
+          <h1>Mahir Azmain Haque</h1>
+          <div class="subtitle">Computer Science & Engineering Student • Software Development • Machine Learning</div>
+        </div>
+        <img class="hero-photo" src="../img/WhatsApp Image 2026-03-23 at 11.59.53.jpeg" alt="Mahir Azmain Haque" />
+      </div>
 
       <div class="contact">
         <div><strong>Location:</strong> Azimpur, Dhaka, Bangladesh</div>
@@ -277,10 +304,10 @@
             <div class="entry">
               <div class="entry-header">
                 <div class="role">BSc in Computer Science & Engineering</div>
-                <div class="meta">2020 – Present</div>
+                <div class="meta">2021 – Present</div>
               </div>
               <div class="org">Khulna University of Engineering & Technology (KUET)</div>
-              <p><strong>CGPA:</strong> 3.48 / 4.00</p>
+              <p><strong>CGPA:</strong> 3.49 / 4.00</p>
             </div>
             <div class="entry">
               <div class="entry-header">
