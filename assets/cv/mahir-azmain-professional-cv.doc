@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahir Azmain Haque - CV</title>
+  <style>
+    :root {
+      --text: #111;
+      --muted: #333;
+      --line: #111;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f5f5f5;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 12px auto;
+      background: white;
+      padding: 18mm 16mm 16mm;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    }
+    h1 {
+      margin: 0;
+      text-align: center;
+      font-size: 31px;
+      font-weight: 700;
+    }
+    .contacts {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 18px;
+      font-size: 11.8pt;
+    }
+    .summary {
+      margin-top: 16px;
+      font-size: 11.8pt;
+      text-align: justify;
+    }
+    .section {
+      margin-top: 18px;
+    }
+    .section-title {
+      font-size: 13pt;
+      font-weight: 700;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 3px;
+      margin-bottom: 8px;
+    }
+    .row-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 14px;
+      font-size: 11.8pt;
+      font-weight: 700;
+    }
+    .sub {
+      font-size: 11.3pt;
+      color: var(--muted);
+    }
+    .item {
+      margin-bottom: 10px;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 26px;
+    }
+    .skill-block-title {
+      font-size: 11.8pt;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    ul {
+      margin: 2px 0 0 20px;
+      padding: 0;
+    }
+    li {
+      margin: 1px 0;
+      font-size: 11.2pt;
+      line-height: 1.25;
+    }
+    .project-title {
+      font-size: 11.8pt;
+      font-weight: 700;
+    }
+    .tech-line {
+      font-size: 11pt;
+      font-style: italic;
+      margin-top: 1px;
+    }
+    .project-desc {
+      font-size: 11.15pt;
+      margin-top: 2px;
+      text-align: justify;
+    }
+    .languages {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      font-size: 11.5pt;
+      font-weight: 700;
+    }
+    @media print {
+      body { background: white; }
+      .page { margin: 0; box-shadow: none; width: auto; min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>Mahir Azmain Haque</h1>
+
+    <div class="contacts">
+      <span>mahirazmain7@gmail.com</span>
+      <span>github.com/MahirAzmain</span>
+      <span>github.com/MahirAzmain/portfolio-deploy</span>
+      <span>+8801534664068</span>
+      <span>Azimpur, Dhaka, Bangladesh</span>
+    </div>
+
+    <div class="summary">
+      Computer Science and Engineering student with hands-on experience building academic and personal projects across software development, machine learning, image processing, and database-driven systems. Comfortable working on web, Android, iOS, and backend-integrated applications, with a strong focus on practical problem solving, clean implementation, and user-friendly products. Interested in software engineering, intelligent systems, and impactful technology applications.
+    </div>
+
+    <section class="section">
+      <div class="section-title">Education</div>
+      <div class="item">
+        <div class="row-head">
+          <div>BSc Engineering in CSE</div>
+          <div>2021 – Present | Khulna, Bangladesh</div>
+        </div>
+        <div class="sub">Khulna University of Engineering & Technology (KUET)</div>
+        <div class="sub">CGPA: 3.49 / 4.00</div>
+      </div>
+      <div class="item">
+        <div class="row-head">
+          <div>Higher Secondary Certificate (Science)</div>
+          <div>2018 – 2020 | Dhaka, Bangladesh</div>
+        </div>
+        <div class="sub">Dhaka College, Dhaka Board</div>
+        <div class="sub">GPA: 5.00 / 5.00</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Skills</div>
+      <div class="skills-grid">
+        <div>
+          <div class="skill-block-title">Programming & Development</div>
+          <ul>
+            <li>C, C++, Java, Swift, JavaScript, Python, SQL, C#</li>
+            <li>Android App Development, iOS App Development</li>
+            <li>Java Software Development, API Integration</li>
+          </ul>
+        </div>
+        <div>
+          <div class="skill-block-title">Frameworks & Databases</div>
+          <ul>
+            <li>Laravel, Django</li>
+            <li>MySQL, Firebase, Oracle</li>
+            <li>Database-driven system design</li>
+          </ul>
+        </div>
+        <div>
+          <div class="skill-block-title">Research & Technical Interests</div>
+          <ul>
+            <li>Machine Learning, Deep Learning</li>
+            <li>Edge AI, Biomedical Applications</li>
+            <li>Image Processing, Intelligent Systems</li>
+          </ul>
+        </div>
+        <div>
+          <div class="skill-block-title">Tools & Professional Strengths</div>
+          <ul>
+            <li>Git, GitHub</li>
+            <li>Teamwork, Leadership, Punctuality</li>
+            <li>Academic project collaboration</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Projects</div>
+
+      <div class="item">
+        <div class="row-head">
+          <div class="project-title">Hemocam App</div>
+          <div>Academic Project</div>
+        </div>
+        <div class="tech-line">Android, Image Processing, Machine Learning</div>
+        <div class="project-desc">Built an Android application designed to detect hemoglobin levels through image processing and machine learning, combining healthcare utility with a user-friendly mobile experience.</div>
+      </div>
+
+      <div class="item">
+        <div class="row-head">
+          <div class="project-title">Online Grocery Shop</div>
+          <div>Academic Project</div>
+        </div>
+        <div class="tech-line">Swift, iOS, API Integration</div>
+        <div class="project-desc">Developed an iOS application with Swift and API-based information extraction to deliver an efficient and user-friendly grocery shopping experience.</div>
+      </div>
+
+      <div class="item">
+        <div class="row-head">
+          <div class="project-title">PocketGuard Personal Finance</div>
+          <div>Software Project</div>
+        </div>
+        <div class="tech-line">Application Design, Secure Login, Budget Tracking</div>
+        <div class="project-desc">Created a personal finance application for expense tracking, budgeting, and goal management with features such as parental controls, secure login, and transaction history.</div>
+      </div>
+
+      <div class="item">
+        <div class="row-head">
+          <div class="project-title">BookLover</div>
+          <div>Web Project</div>
+        </div>
+        <div class="tech-line">Laravel, Web Development</div>
+        <div class="project-desc">Built a Laravel-based web platform to help readers discover, manage, review, and share books in one place.</div>
+      </div>
+
+      <div class="item">
+        <div class="row-head">
+          <div class="project-title">Tiny Messenger</div>
+          <div>OOP Project</div>
+        </div>
+        <div class="tech-line">C++, Object-Oriented Programming</div>
+        <div class="project-desc">Implemented a messaging system featuring sign up, sign in, chat, add friends, inbox management, unfriend functionality, group chat, and friend list operations.</div>
+      </div>
+
+      <div class="item">
+        <div class="row-head">
+          <div class="project-title">Stock Exchange Database System</div>
+          <div>Database Project</div>
+        </div>
+        <div class="tech-line">Oracle SQL Plus 21c</div>
+        <div class="project-desc">Developed a database-focused academic project centered on stock exchange data management and structured system design.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Achievements</div>
+      <div class="item">
+        <div class="project-title">Dean's Award for Academic Excellence</div>
+        <div class="project-desc">Faculty of Electrical and Electronic Engineering (2024).</div>
+      </div>
+      <div class="item">
+        <div class="project-title">Duke of Edinburgh's International Award</div>
+        <div class="project-desc">Recognized for skill development, physical fitness, community service, and adventurous activities (2024).</div>
+      </div>
+      <div class="item">
+        <div class="project-title">Intra KUET Football Tournament Champion</div>
+        <div class="project-desc">Played as Forward and served as Captain of the championship-winning team (2023).</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Languages</div>
+      <div class="languages">
+        <div>Bangla — Proficient</div>
+        <div>English — Proficient</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
