@@ -86,7 +86,7 @@ drop policy if exists "auth delete feedback" on public.feedback;
 create policy "auth delete feedback" on public.feedback for delete to authenticated using (true);
 
 insert into public.about (id, image, description, skills, cv_link)
-values (1, 'assets/img/about-perfil.jpg', 'I am Mahir Azmain, a frontend-focused developer who enjoys building clean, responsive websites and practical web experiences.', 'HTML, CSS, JavaScript, PHP, MySQL, Responsive Design', 'assets/cv/mahir-azmain-professional-cv.html')
+values (1, 'assets/img/about-perfil.jpg', 'I am Mahir Azmain, a frontend-focused developer who enjoys building clean, responsive websites and practical web experiences.', 'HTML, CSS, JavaScript, PHP, MySQL, Responsive Design', 'assets/cv/mahir-azmain-professional-cv.pdf')
 on conflict (id) do update set
   image = excluded.image,
   description = excluded.description,
