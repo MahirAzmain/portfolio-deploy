@@ -1,12 +1,26 @@
 # portfolio-deploy
 
-Static GitHub Pages deployment of Mahir Azmain's portfolio frontend, adapted from the original PHP/MySQL repo.
+Dynamic GitHub Pages deployment of Mahir Azmain's portfolio frontend, powered by Supabase.
 
-## What changed
-- converted the PHP homepage into a static `index.html`
-- preserved the existing frontend design, assets, CV, and social links
-- removed PHP/MySQL admin and database dependencies so it can deploy free on GitHub Pages
-- contact form is currently non-backend in this static deployment
+## Included
+- static frontend on GitHub Pages
+- dynamic data loading from Supabase for:
+  - about
+  - education
+  - experience
+  - projects
+  - music
+- contact form submission into Supabase `feedback`
+
+## Supabase setup
+1. Open the Supabase SQL Editor.
+2. Run `supabase_setup.sql`.
+3. The frontend is already configured with the current project URL and publishable key.
 
 ## Deploy
-This repo is intended to deploy automatically with GitHub Pages.
+Push to `main` and GitHub Pages serves the site automatically.
+
+## Notes
+- anonymous read access is enabled for public portfolio content
+- anonymous insert is enabled for `feedback`
+- update/delete/admin auth is not implemented yet

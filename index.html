@@ -294,9 +294,10 @@
           <div class="about__perfil">
             <div class="about__image">
               <img
-                src="profile/uploads/about-perfil.jpg"
+                src="assets/img/about-perfil.jpg"
                 alt="about-perfil"
                 class="about__img"
+                id="about-image"
               />
               <div class="about__shadow"></div>
 
@@ -311,12 +312,12 @@
           </div>
 
           <div class="about__info">
-            <p class="about__description">
+            <p class="about__description" id="about-description">
             I am Mahir Azmain, a frontend-focused developer who enjoys building clean, responsive websites and practical web experiences.
             </p>
 
             <ul class="about__list">
-              <li class="about__item">
+              <li class="about__item" id="about-skills">
                 <b>My Skills Are:</b> HTML, CSS, JavaScript, PHP, MySQL, Responsive Design
               </li>
             </ul>
@@ -326,6 +327,7 @@
                 href="assets/cv/CV_2024030410050372.pdf"
                 target="_blank"
                 class="button"
+                id="about-cv-link"
               >
                 <i class="ri-download-2-line"></i> Download CV
               </a>
@@ -537,6 +539,7 @@
         <div class="fila">
             <div class="col izquierda">
                 <h3>Education</h3>
+                <div id="education-list">
                 <div class="item izq">
                                 <h4>BSc in Computer Science</h4>
                                 <span class="casa">Your University Name</span>
@@ -546,10 +549,12 @@
                                     <div class="circuloi"></div>
                                 </div>
                             </div>
+                </div>
             </div>
 
             <div class="col derecha">
                 <h3>Experience</h3>
+                <div id="experience-list">
                 <div class="item der">
                                 <h4>Frontend Developer</h4>
                                 <span class="casa">Freelance / Personal Projects</span>
@@ -559,6 +564,7 @@
                                     <div class="circulod"></div>
                                 </div>
                             </div>
+                </div>
             </div>
         </div>
     </div>
@@ -572,7 +578,7 @@
           <span>Projects.</span>
         </h2>
 
-        <div class="projects__container container grid">
+        <div class="projects__container container grid" id="projects-list">
           
           <article class="projects__card">
             <a href="https://github.com/MahirAzmain" target="_blank" class="projects__link">
@@ -592,42 +598,6 @@
               <i class="ri-layout-6-line"></i> Live Demo
             </a>
           </article>
-          <article class="projects__card">
-            <a href="https://github.com/MahirAzmain" target="_blank" class="projects__link">
-              <div class="projects__image">
-                <img src="assets/img/world-clock.webp" alt="World Clock" class="projects__img" />
-                <a href="https://github.com/MahirAzmain" target="_blank" class="projects__button button">
-                  <i class="ri-arrow-right-up-line"></i>
-                </a>
-              </div>
-            </a>
-            <div class="projects__content">
-              <h3 class="projects__subtitle">Website</h3>
-              <h2 class="projects__title">World Clock</h2>
-              <p class="projects__description">A simple utility project for tracking time across locations with a clean UI.</p>
-            </div>
-            <a href="https://github.com/MahirAzmain" target="_blank" class="projects__demo button">
-              <i class="ri-layout-6-line"></i> Live Demo
-            </a>
-          </article>
-          <article class="projects__card">
-            <a href="https://github.com/MahirAzmain" target="_blank" class="projects__link">
-              <div class="projects__image">
-                <img src="assets/img/battery.webp" alt="Battery UI Project" class="projects__img" />
-                <a href="https://github.com/MahirAzmain" target="_blank" class="projects__button button">
-                  <i class="ri-arrow-right-up-line"></i>
-                </a>
-              </div>
-            </a>
-            <div class="projects__content">
-              <h3 class="projects__subtitle">Website</h3>
-              <h2 class="projects__title">Battery UI Project</h2>
-              <p class="projects__description">A front-end visual project focused on interaction and polished design details.</p>
-            </div>
-            <a href="https://github.com/MahirAzmain" target="_blank" class="projects__demo button">
-              <i class="ri-layout-6-line"></i> Live Demo
-            </a>
-          </article>
 
         </div>
       </section>
@@ -641,12 +611,9 @@
             I love listening to music, it helps me relax and focus on my work.
             Here are some of my favorite songs.
         </p>
-        <div class="music__container container grid">
+        <div class="music__container container grid" id="music-list">
             <div class="music__box" id="music-box-playlist-1">
                 <iframe title="Playlist Cá Hồi Hoang" style="border-radius: 12px" src="https://open.spotify.com/embed/playlist/2P9xnhDe4FFQxlLEUYDxqt?utm_source=generator" width="100%" height="410" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div>
-            <div class="music__box" id="music-box-playlist-2">
-                <iframe title="Playlist Đen Vâu" style="border-radius: 12px" src="https://open.spotify.com/embed/playlist/0CKWdKfhWPtqhpiwCwg1zw?utm_source=generator" width="100%" height="410" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
         </div>
     </section>
@@ -675,7 +642,7 @@
           <div class="contact__mail">
             <h2 class="contact__title">Send Me A Message</h2>
 
-            <form action="#contact" method="post" class="contact__form" id="contact-form" onsubmit="event.preventDefault(); alert('Direct backend form delivery is not configured in this static deployment yet. Please use the social links below to contact Mahir.');">
+            <form action="#contact" method="post" class="contact__form" id="contact-form">
               <div class="contact__group">
                 
                 <div class="contact__box">
@@ -744,6 +711,7 @@
                 <i class="ri-send-plane-line"></i> Send Message
               </button>
               <p class="contact__message" id="contact-message"></p>
+              <p class="contact__message" id="contact-status"></p>
             </form>
           </div>
 
@@ -818,8 +786,10 @@
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     <!--=============== EMAIL JS ===============-->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/supabase-dynamic.js"></script>
   </body>
 </html>
 
